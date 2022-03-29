@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ModelTables" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="kitap_diller">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kitap_dili" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="kitaplars" Relationship="Self.FK_kitaplar_kitap_diller" FromRole="kitap_diller" ToRole="kitaplar" />
+  </EntityType>
+  <EntityType Name="kitap_turler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kitap_turler1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="kitaplars" Relationship="Self.FK_kitaplar_kitap_turler" FromRole="kitap_turler" ToRole="kitaplar" />
+  </EntityType>
+  <EntityType Name="kitaplar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kitap_adi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kitap_yazari" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="yayin_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="kitap_turID" Type="Int32" Nullable="false" />
+    <Property Name="kitap_kapagi" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="kitap_aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kitap_dilID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="kitap_diller" Relationship="Self.FK_kitaplar_kitap_diller" FromRole="kitaplar" ToRole="kitap_diller" />
+    <NavigationProperty Name="kitap_turler" Relationship="Self.FK_kitaplar_kitap_turler" FromRole="kitaplar" ToRole="kitap_turler" />
+  </EntityType>
+  <EntityType Name="kullanicilar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kullanici_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kullanici_sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dogum_tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="cinsiyet" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_kitaplar_kitap_diller">
+    <End Role="kitap_diller" Type="Self.kitap_diller" Multiplicity="1" />
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kitap_diller">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="kitaplar">
+        <PropertyRef Name="kitap_dilID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kitaplar_kitap_turler">
+    <End Role="kitap_turler" Type="Self.kitap_turler" Multiplicity="1" />
+    <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kitap_turler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="kitaplar">
+        <PropertyRef Name="kitap_turID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EntitiesTables" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="kitap_diller" EntityType="Self.kitap_diller" />
+    <EntitySet Name="kitap_turler" EntityType="Self.kitap_turler" />
+    <EntitySet Name="kitaplars" EntityType="Self.kitaplar" />
+    <EntitySet Name="kullanicilars" EntityType="Self.kullanicilar" />
+    <AssociationSet Name="FK_kitaplar_kitap_diller" Association="Self.FK_kitaplar_kitap_diller">
+      <End Role="kitap_diller" EntitySet="kitap_diller" />
+      <End Role="kitaplar" EntitySet="kitaplars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kitaplar_kitap_turler" Association="Self.FK_kitaplar_kitap_turler">
+      <End Role="kitap_turler" EntitySet="kitap_turler" />
+      <End Role="kitaplar" EntitySet="kitaplars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

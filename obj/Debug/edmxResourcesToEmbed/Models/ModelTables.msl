@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelTablesStoreContainer" CdmEntityContainer="EntitiesTables">
+    <EntitySetMapping Name="kitap_diller">
+      <EntityTypeMapping TypeName="ModelTables.kitap_diller">
+        <MappingFragment StoreEntitySet="kitap_diller">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="kitap_dili" ColumnName="kitap_dili" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kitap_turler">
+      <EntityTypeMapping TypeName="ModelTables.kitap_turler">
+        <MappingFragment StoreEntitySet="kitap_turler">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="kitap_turler1" ColumnName="kitap_turler" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kitaplars">
+      <EntityTypeMapping TypeName="ModelTables.kitaplar">
+        <MappingFragment StoreEntitySet="kitaplar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="kitap_adi" ColumnName="kitap_adi" />
+          <ScalarProperty Name="kitap_yazari" ColumnName="kitap_yazari" />
+          <ScalarProperty Name="yayin_tarihi" ColumnName="yayin_tarihi" />
+          <ScalarProperty Name="kitap_turID" ColumnName="kitap_turID" />
+          <ScalarProperty Name="kitap_kapagi" ColumnName="kitap_kapagi" />
+          <ScalarProperty Name="kitap_aciklama" ColumnName="kitap_aciklama" />
+          <ScalarProperty Name="kitap_dilID" ColumnName="kitap_dilID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanicilars">
+      <EntityTypeMapping TypeName="ModelTables.kullanicilar">
+        <MappingFragment StoreEntitySet="kullanicilar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="kullanici_adi" ColumnName="kullanici_adi" />
+          <ScalarProperty Name="kullanici_email" ColumnName="kullanici_email" />
+          <ScalarProperty Name="kullanici_sifre" ColumnName="kullanici_sifre" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="soyad" ColumnName="soyad" />
+          <ScalarProperty Name="dogum_tarihi" ColumnName="dogum_tarihi" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
