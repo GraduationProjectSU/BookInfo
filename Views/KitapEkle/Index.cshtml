@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBook.cshtml";
+}
+
+<div class="page-content">
+
+
+
+    <div class="row">
+        <div class="col-12 col-lg-8 col-xl-8 d-flex">
+            <div class="card" style="border-radius:15px; padding:10px">
+                <div id="card-title">
+                    <h5 style="margin-left: 20px; margin-top: 20px">Kitap Ekle</h5>
+                    <div class="row">
+                        <form action="/KitapEkle/Ekle" method="post">
+                            <div style="padding:20px; width:900px;">
+
+                                <div class="mb-3">
+                                    <label class="form-label">Kitap Kapağı:</label>
+                                    <input type="file" name="kitap_kapagi" class="form-control">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Kitap Adı</label>
+                                    <input type="text" name="kitap_adi" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Kitap Yazarı</label>
+                                    <input type="text" name="kitap_yazari" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label">Kitap Türü</label>
+                                    <select name="kitap_turu" id="inputState" class="form-select form-control">
+                                        <option selected="">Seçiniz...</option>
+                                        <option>Şiir</option>
+                                        <option>Bilimkurgu</option>
+                                        <option>Macera</option>
+                                        <option>Aksiyon</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label">Orijinal Dil</label>
+                                    <select name="orijinal_dil" id="inputState" class="form-select form-control">
+                                        <option selected="">Seçiniz...</option>
+                                        <option>Türkçe</option>
+                                        <option>İngilizce</option>
+                                        <option>Almanca</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Yayınlanma Tarihi</label>
+                                    <input class="result form-control" name="yayin_tarihi" type="date" id="date" placeholder="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputAddress" class="form-label">Kitap Açıklaması</label>
+                                    <textarea class="form-control" name="kitap_aciklamasi" id="inputAddress" rows="2"></textarea>
+                                </div>
+                                <br />
+                                <br />
+                                <button type="submit" class="btn btn-outline-dark px-5 radius-30">Ekle</button>
+
+                            </div>
+                        </form>
+
+                        @if (ViewBag.result == 1)
+                        {
+                            <div class="alert border-0 alert-dismissible fade show py-2">
+                                <div class="d-flex align-items-center">
+                                    <div class="font-35 text-white">
+                                        <i class="bx bxs-check-circle"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 text-white">Başarılı</h6>
+                                        <div class="text-white">Kütüphaneye yeni bir kitap eklediğiniz için teşekkür ederiz :)</div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+                        else if (ViewBag.result == 0)
+                        {
+                            <div class="alert border-0 alert-dismissible fade show py-2">
+                                <div class="d-flex align-items-center">
+                                    <div class="font-35 text-white">
+                                        <i class="bx bx-info-circle"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <h6 class="mb-0 text-white">Uyarı!</h6>
+                                        <div class="text-white">Bir hata oluştu :( Lütfen yeniden deneyiniz </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Editörün Seçimleri Başlangıç-->
+
+        <div class="col-12 col-lg-4 col-xl-4 d-flex">
+            <div class="card radius-10 overflow-hidden w-100">
+                <div class="card-body">
+                    <div>
+                        <h6 class="mb-0">Editörün Seçimleri</h6>
+                    </div>
+
+                    <div style="height: 725px; overflow-x: hidden; overflow-y: scroll;">
+                        <!--Önerilen Card 1-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 1 son-->
+                        <!--Önerilen Card 2-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 2 son-->
+                        <!--Önerilen Card 3-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 3 son-->
+                        <!--Önerilen Card 4-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 4 son-->
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Editörün Seçimleri Sonu-->
+
+</div>
+
+
