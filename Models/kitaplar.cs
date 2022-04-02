@@ -17,11 +17,11 @@ namespace BookInfo.Models
         public int ID { get; set; }
         public string kitap_adi { get; set; }
         public string kitap_yazari { get; set; }
-        public System.DateTime yayin_tarihi { get; set; }
-        public int kitap_turID { get; set; }
+        public Nullable<System.DateTime> yayin_tarihi { get; set; }
+        public Nullable<int> kitap_turID { get; set; }
         public byte[] kitap_kapagi { get; set; }
         public string kitap_aciklama { get; set; }
-        public int kitap_dilID { get; set; }
+        public Nullable<int> kitap_dilID { get; set; }
     
         public virtual kitap_diller kitap_diller { get; set; }
         public virtual kitap_turler kitap_turler { get; set; }

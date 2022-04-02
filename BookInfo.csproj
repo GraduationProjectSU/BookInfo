@@ -99,8 +99,8 @@
     <Content Include="Global.asax" />
     <Content Include="Models\ModelTables.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelTables.Context.cs</LastGenOutput>
       <DependentUpon>ModelTables.edmx</DependentUpon>
+      <LastGenOutput>ModelTables.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ModelTables.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -161,6 +161,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\KitapEkle\Index.cshtml" />
     <Content Include="Views\KitapEkle\Ekle.cshtml" />
+    <Content Include="Views\Home\Kitap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

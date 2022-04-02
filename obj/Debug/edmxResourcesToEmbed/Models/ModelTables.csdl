@@ -23,11 +23,11 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="kitap_adi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="kitap_yazari" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="yayin_tarihi" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="kitap_turID" Type="Int32" Nullable="false" />
-    <Property Name="kitap_kapagi" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="yayin_tarihi" Type="DateTime" Precision="0" />
+    <Property Name="kitap_turID" Type="Int32" />
+    <Property Name="kitap_kapagi" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="kitap_aciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="kitap_dilID" Type="Int32" Nullable="false" />
+    <Property Name="kitap_dilID" Type="Int32" />
     <NavigationProperty Name="kitap_diller" Relationship="Self.FK_kitaplar_kitap_diller" FromRole="kitaplar" ToRole="kitap_diller" />
     <NavigationProperty Name="kitap_turler" Relationship="Self.FK_kitaplar_kitap_turler" FromRole="kitaplar" ToRole="kitap_turler" />
   </EntityType>
@@ -45,7 +45,7 @@
     <Property Name="cinsiyet" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
   </EntityType>
   <Association Name="FK_kitaplar_kitap_diller">
-    <End Role="kitap_diller" Type="Self.kitap_diller" Multiplicity="1" />
+    <End Role="kitap_diller" Type="Self.kitap_diller" Multiplicity="0..1" />
     <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="kitap_diller">
@@ -57,7 +57,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_kitaplar_kitap_turler">
-    <End Role="kitap_turler" Type="Self.kitap_turler" Multiplicity="1" />
+    <End Role="kitap_turler" Type="Self.kitap_turler" Multiplicity="0..1" />
     <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="kitap_turler">

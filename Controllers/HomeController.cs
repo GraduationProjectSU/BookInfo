@@ -14,9 +14,11 @@ namespace BookInfo.Controllers
         {
             return View();
         }
-        public ActionResult PageTwo()
+        public ActionResult Kitap()
         {
-            return View();
+            EntitiesTables ent = new EntitiesTables();
+            List<kitaplar> kitap = ent.kitaplars.ToList();
+            return View(kitap);
         }
 
     }

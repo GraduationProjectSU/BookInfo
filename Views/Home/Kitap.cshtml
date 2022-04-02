@@ -1,0 +1,222 @@
+﻿@model IEnumerable<BookInfo.Models.kitaplar>
+
+@{
+    ViewBag.Title = "Kitap";
+    Layout = "~/Views/Shared/_LayoutBook.cshtml";
+}
+
+<div class="page-content">
+
+
+
+    <div class="row">
+        <div class="col-12 col-lg-8 col-xl-8 d-flex">
+            <div class="card" style="border-radius:15px; padding:10px">
+                <div id="card-title">
+                    <h5 style="margin-left: 20px; margin-top: 20px">Kitap Bilgisi</h5>
+
+                    <div class="row">
+
+                        <div class="col-12 col-lg-8 col-xl-8 d-flex">
+
+                            <img src="/assets/images/book.jpg" class="book" />
+
+                            <div class="information">
+                                @foreach (var item in Model)
+                                {
+                                <h2>@item.kitap_adi</h2>
+                                }
+                                <p>Yazar : Isaac Asimov</p>
+                                <p>Türü : Bilimkurgu</p>
+                                <p>Yayın Tarihi : Mayıs 1942</p>
+                                <p>Orijinal Dili : İngilizce</p>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <p class="app-title p-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit
+                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                        occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit
+                        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                        occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                    </p>
+                    <div class="row">
+                        <div class="col-12 col-lg-8 col-xl-8 d-flex">
+
+                            <p class="app-title" style="font-size:12px; margin-left:20px">● 03.02.2022</p>
+                            <p class="app-title" style="font-size:12px; margin-left:20px">alihangedikcom</p>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <!--Editörün Seçimleri Başlangıç-->
+
+        <div class="col-12 col-lg-4 col-xl-4 d-flex">
+            <div class="card radius-10 overflow-hidden w-100">
+                <div class="card-body">
+                    <div>
+                        <h6 class="mb-0">Editörün Seçimleri</h6>
+                    </div>
+
+                    <div style="height: 650px; overflow-x: hidden; overflow-y: scroll;">
+                        <!--Önerilen Card 1-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 1 son-->
+                        <!--Önerilen Card 2-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 2 son-->
+                        <!--Önerilen Card 3-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 3 son-->
+                        <!--Önerilen Card 4-->
+                        <div class="card  recommended">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="/assets/images/book.jpg" alt="..." class="card-img">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="">alihangedikcom</small>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Önerilen Card 4 son-->
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Editörün Seçimleri Sonu-->
+    <!--Yorumlar-->
+    <div class="card radius-10">
+        <div class="card-body">
+            <div class="d-flex align-items-center">
+                <div>
+                    <h5 class="mb-0">Yorumlar</h5>
+                </div>
+            </div>
+            <hr>
+            <!--Oturum sahibi-->
+            <div class="chip chip-s bg-light text-white">
+                <img src="/assets/images/avatars/avatar-1.png" alt="Contact Person">Alperen Özkan
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">alperenozkan</span>
+                <textarea class="form-control" aria-label="Yorumuzu yazabilirsiniz" maxlength="500" rows="1"></textarea>
+            </div>
+            <!--Oturum sahibi sonu-->
+            <hr />
+            <!--Diğer kullanıcı yorumları-->
+            <div class="chip chip-md bg-light text-white">
+                <img src="/assets/images/avatars/avatar-4.png" alt="Contact Person">Alihan Gedik
+            </div>
+            <p class="card-text">Mükemmel kitap okumanızı tavsiye ederim.</p>
+            <p><small>03.02.2022 22:14</small></p>
+
+
+            <div class="chip chip-md bg-light text-white">
+                <img src="/assets/images/avatars/avatar-7.png" alt="Contact Person">Mehmet Önal
+            </div>
+            <p class="card-text">Asimov'un en güzel kitaplarında biridir.</p>
+            <p><small>03.02.2022 16:26</small></p><div class="chip chip-md bg-light text-white">
+
+
+                <img src="/assets/images/avatars/avatar-3.png" alt="Contact Person">Şehriban Gedik
+            </div>
+            <p class="card-text">Vakıf serisini kesinlikle okuyun.</p>
+            <p><small>03.02.2022 20:05</small></p>
+
+
+            <!--Diğer kullanıcı yorumları sonu-->
+        </div>
+    </div>
+    <!--Yorumlar Sonu-->
+</div>
+

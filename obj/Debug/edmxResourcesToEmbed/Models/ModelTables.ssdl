@@ -21,11 +21,11 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="kitap_adi" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="kitap_yazari" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="yayin_tarihi" Type="date" Nullable="false" />
-    <Property Name="kitap_turID" Type="int" Nullable="false" />
-    <Property Name="kitap_kapagi" Type="image" Nullable="false" />
+    <Property Name="yayin_tarihi" Type="date" />
+    <Property Name="kitap_turID" Type="int" />
+    <Property Name="kitap_kapagi" Type="image" />
     <Property Name="kitap_aciklama" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="kitap_dilID" Type="int" Nullable="false" />
+    <Property Name="kitap_dilID" Type="int" />
   </EntityType>
   <EntityType Name="kullanicilar">
     <Key>
@@ -41,7 +41,7 @@
     <Property Name="cinsiyet" Type="varchar" MaxLength="15" Nullable="false" />
   </EntityType>
   <Association Name="FK_kitaplar_kitap_diller">
-    <End Role="kitap_diller" Type="Self.kitap_diller" Multiplicity="1" />
+    <End Role="kitap_diller" Type="Self.kitap_diller" Multiplicity="0..1" />
     <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="kitap_diller">
@@ -53,7 +53,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_kitaplar_kitap_turler">
-    <End Role="kitap_turler" Type="Self.kitap_turler" Multiplicity="1" />
+    <End Role="kitap_turler" Type="Self.kitap_turler" Multiplicity="0..1" />
     <End Role="kitaplar" Type="Self.kitaplar" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="kitap_turler">
